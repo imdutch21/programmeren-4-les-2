@@ -1,4 +1,5 @@
 let http = require('http');
+const port = process.env.PORT || 3000;
 function onRequest(request, response) {
     console.log('Er was een request.');
     response.writeHead(200, {'content-type': 'application/json'});
@@ -6,5 +7,5 @@ function onRequest(request, response) {
     response.end();
 }
 
-http.createServer(onRequest).listen(3000);
-console.log('De server luistert op poort 3000');
+http.createServer(onRequest).listen(port);
+console.log('De server luistert op poort ' + port);
